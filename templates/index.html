@@ -1,0 +1,213 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- carousel -->
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+        <!-- Sección Inicio -->
+      <div class="carousel-item active">
+        <img src="{% static 'img/carousel-1-index.jpg' %}" style="width: 100%; height: 90vh; object-fit: cover;" alt="...">
+        <div class="carousel-caption d-none d-md-block texto-principal">
+          <p>¡Adopta una mascota, y dale una <span>segunda oportunidad</span>!</p>
+        </div>
+      </div>
+      <!-- Sección Sobre nosotros -->
+      <div class="carousel-item">
+        <img src="{% static 'img/nosotros_principal.jpg' %}" style="width: 100%; height: 90vh; object-fit: cover;" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <div class="carousel-caption d-none d-md-block texto-principal">
+            <p>Conoce un poco sobre <span> Patitas Perdidas </span> </p>
+          </div>
+        </div>
+      </div>
+      <!-- Sección Adopta (ver mascotas) -->
+      <div class="carousel-item h-auto">
+        <img src="{% static 'img/adopta1.jpg' %}" style="width: 100%; height: 90vh; object-fit: cover;" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <div class="carousel-caption d-none d-md-block texto-principal">
+            <p>Adopta una <span>mascota</span> </p>
+          </div>
+        </div>
+      </div>
+      <!-- Sección Blog -->
+      <div class="carousel-item h-auto">
+        <img src="{% static 'img/noticias1.jpg' %}" style="width: 100%; height: 90vh; object-fit: cover;" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <div class="carousel-caption d-none d-md-block texto-principal">
+            <p>Lee los últimos <span>artículos</span>!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+
+  <!-- Sección Recién llegados -->
+  <section class="container mt-5">
+    <div class="row titulo">
+      <h2>Recién llegados</h2>
+    </div>
+    
+    
+    {% if lista_mascotas %}
+      
+      {% for mascota in lista_mascotas %}
+        {{mascota.nombre}}
+      {% endfor %}
+
+    {% endif %}
+      
+      
+    <!-- pet list -->
+    <div class="row gy-5">
+      <!-- primer mascota -->
+      <div class="col">
+        <div class="card text-center mascota">
+          <img class="card-img-top" src="{% static 'img/mascota-1.jpg' %}" alt="Imagen Mascota">
+          <div class="card-body">
+            <p class="card-title">Lulú</p>
+            <p class="card-text">Jueguetona, Inteligente y Cariñosa</p>
+            <a href="#" class="btn boton">Conócelo</a>
+          </div>
+        </div>
+      </div>
+      <!-- primer mascota -->
+      <div class="col">
+        <div class="card mascota">
+          <img class="card-img-top" src="{% static 'img/mascota-1.jpg' %}" alt="Imagen Mascota">
+          <div class="card-body">
+            <p class="card-title">Lulú</p>
+            <p class="card-text">Jueguetona, Inteligente y Cariñosa</p>
+            <a href="#" class="btn boton">Conócelo</a>
+          </div>
+        </div>
+      </div>
+      <!-- primer mascota -->
+      <div class="col">
+        <div class="card mascota">
+          <img class="card-img-top" src="{% static 'img/mascota-1.jpg' %}" alt="Imagen Mascota">
+          <div class="card-body">
+            <p class="card-title">Lulú</p>
+            <p class="card-text">Jueguetona, Inteligente y Cariñosa</p>
+            <a href="#" class="btn boton">Conócelo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row recien-llegados">
+      <a href="adopta.html" class="btn boton boton-rojo">Ver todos</a>
+    </div>
+  </section>
+
+  <!-- Sección artículos / historias -->
+  <section class="container mt-5">
+
+    <div class="row">
+      <!-- articulos recientes -->
+      <div class="col-md-7">
+        <!-- titulo -->
+        <div class="row titulo">
+          <h2>Artículos Recientes</h2>
+        </div>
+        <!-- contenedor articulos -->
+        <div class="row">
+          <!-- articulo 1 -->
+          <div class="row">
+            <div class="col">
+              <article class="card border-light entrada-blog cursor-pointer">
+                <div class="row">
+                  <div class="col-md-6">
+                    <img class="img-fluid" src="{% static 'img/articulo1.jpeg' %}" alt="Imagen Artículo 1">
+                  </div>
+                  <div class="col">
+                    <div class="card-body contenido-entrada">
+                      <a class="card-title" href="articulo1.html">
+                        <h3 >Por qué es importante el “microchip” en tu adoptado</h3>
+                      </a>
+                      <p class="card-subtitle">Escrito el: <span>08/11/2020</span> por <span>Belen Mota</span></p>
+                      <p class="card-text">Un microchip es un pequeño dispositivo
+                        que se implanta en perros y gatos para
+                        mantenerlos identificados de por vida.</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+          <!-- articulo 2 -->
+          <div class="row">
+            <div class="col">
+              <article class="card border-light entrada-blog cursor-pointer">
+                <div class="row">
+                  <div class="col-md-6">
+                    <img class="img-fluid" src="{% static 'img/articulo1.jpeg' %}" alt="Imagen Artículo 1">
+                  </div>
+                  <div class="col">
+                    <div class="card-body contenido-entrada">
+                      <a class="card-title" href="articulo1.html">
+                        <h3 >Por qué es importante el “microchip” en tu adoptado</h3>
+                      </a>
+                      <p class="card-subtitle">Escrito el: <span>08/11/2020</span> por <span>Belen Mota</span></p>
+                      <p class="card-text">Un microchip es un pequeño dispositivo
+                        que se implanta en perros y gatos para
+                        mantenerlos identificados de por vida.</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+  
+      <!-- historias memorables -->
+      <div class="col">
+        <!-- titulo -->
+        <div class="row titulo">
+          <h2>Historias memorables</h2>
+        </div>
+        <!-- contenedor historias -->
+        <div class="row">
+          <div class="col">
+            <!-- historia -->
+            <div class="card border-light text-bg-dark m-5 overflow-hidden cursor-pointer">
+              <img src="{% static 'img/historia-1.jpg' %}" class="card-img" alt="...">
+              <div class="card-img-overlay texto-historia">
+                <h4 class="card-title">Henry y Cal</h4>
+                <p class="card-text">Henry adoptó al peludo Kal cuando apenas
+                  era un cachorro, ahora viven muy felices.</p>
+              </div>
+            </div>
+            <!-- historia -->
+            <div class="card border-light text-bg-dark m-5 overflow-hidden cursor-pointer">
+              <img src="{% static 'img/historia-1.jpg' %}" class="card-img" alt="...">
+              <div class="card-img-overlay texto-historia">
+                <h4 class="card-title">Henry y Cal</h4>
+                <p class="card-text">Henry adoptó al peludo Kal cuando apenas
+                  era un cachorro, ahora viven muy felices.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+{% endblock content %}
+    

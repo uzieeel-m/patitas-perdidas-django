@@ -1,0 +1,164 @@
+{% extends 'base.html' %}   
+{% load static %}
+
+
+{% block content %}
+    <!-- Seccion principal -->
+    <div class="seccion seccion-principal">
+        <img src="{% static 'img/nosotros_principal.jpg' %}" alt="Imagen Principal Nosotros">
+        <div class="texto-principal texto-principal-absolute">
+            <h1>Conoce un poco sobre <span> Patitas Perdidas </span> </h1>
+        </div>
+    </div>
+    <!-- fin Seccion principal -->
+  <!-- Sobre nosotros -->
+  <main class="main-container">
+      <section class="container seccion seccion-sobre-nosotros">
+        <div class="row contenedor-texto-imagen">
+          <div class="row titulo">
+            <h2>Sobre Patitas Perdidas</h2>
+          </div>
+          <div class="row">
+              <div class="col-4">
+                <img class="img-fluid" src="{% static 'img/nosotros_main.png' %}" alt="Perrito Nosotros">
+              </div>
+              <div class="col-5 texto">
+                <p>  
+                    Patitas Perdidas es una Fundación encargada de
+                    rescatar animales callejeros con el fin de
+                    buscarles un hogar. <br>
+                    Creemos en que todos merecemos una segunda oportunidad.
+                    Dales una segunda oportunidad. ¡Adopta ahora!
+                </p>
+                <a href="adopta.html" class="boton">Ver mascotas</a>
+              </div>
+          </div>
+        </div>
+      </section>
+  <!-- fin sobre nosotros -->
+  <!-- Inicia Instalaciones -->
+    <section class="container seccion instalaciones">
+        <div class="row titulo">
+          <h2>Conoce Nuestras Instalciones</h2>
+        </div>
+        <p class="row">
+            Patitas Perdidas se diferencia de las perreras porque
+            ofrece un lugar digno de cada animal que rescata,
+            satisfaciendo las necesidades básicas que los
+            animales puedan necesitar, Tales como: 
+        </p>
+
+      <div class="row contenedor-texto-imagen mt-3">
+        <div class="row titulo">
+          <h3>Alimento</h3>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <img class="img-fluid" src="{% static 'img/nosotros1.jpg' %}" alt="Alimento">
+            </div>
+            <div class="col-2 texto">
+              <p>Cada animalito que rescatamos tiene derecho a 3
+                  comidas al día. Buscamos que las croquetas con las que son
+                  alimentados tengan los nutrientes necesarios para ellos.</p>
+            </div>
+        </div>
+      </div>
+
+      <div class="row contenedor-texto-imagen">
+        <div class="row titulo">
+          <h3>Necesidades básicas</h3>
+        </div>
+        <div class="row">
+            <div class="col-4">
+              <img class="img-fluid" src="{% static 'img/nosotros2.jpg' %}" alt="Perritos">
+            </div>
+            <div class="col-2 texto">
+              <p>Tenemos un lugar especial donde puedan orinar y defecar.
+              Procurmos siempre mantener limpio e higiénico, para evitar
+              malos olores, u otras infecciones.</p>
+            </div>
+        </div>
+      </div>
+
+      <div class="row contenedor-texto-imagen">
+        <div class="row titulo">
+          <h3>Descanso</h3>
+        </div>
+        <div class="row">
+            <div class="col-4">
+              <img class="img-fluid" src="{% static 'img/nosotros6.jpg' %}" alt="Descanso">
+            </div>
+            <div class="col-2 texto">
+              <p>Existe un espacio de descanso disponible para cada perro
+              y gato bajo nuestro cuidado. Porque ellos también merecen una
+              cama cómoda donde dormir.</p>
+            </div>
+        </div>
+      </div>
+
+      <div class="row contenedor-texto-imagen">
+        <div class="row titulo">
+          <h3>Atención médica</h3>
+        </div>
+        <div class="row">
+            <div class="col-4">
+              <img class="img-fluid" src="{% static 'img/nosotros8.jpg' %}" alt="Medico">
+            </div>
+            <div class="col-2 texto">
+              <p>Ellos reciben un chequeo médico con frecuencia, y reciben
+              el mejor trato cuando se enferman o lastiman, y lo mejor, con
+              atención inmediata.</p>
+            </div>
+        </div>
+      </div>
+
+      <div class="row contenedor-texto-imagen">
+        <div class="row titulo">
+          <h3>Áreas de esparcimiento</h3>
+        </div>
+        <div class="row">
+            <div class="col-4">
+              <img class="img-fluid" src="{% static 'img/nosotros4.jpg' %}" alt="Área de juego">
+            </div>
+            <div class="col-2 texto">
+              <p>Los gatitos tienen un área de juego muy especial y divertida
+              ya que conocemos la necesidad de actividad que ellos necesitan.</p>
+            </div>
+        </div>
+      </div>
+
+      <div class="row contenedor-texto-imagen">
+        <div class="row titulo">
+          <h3>Paseos diarios</h3>
+        </div>
+        <div class="row">
+            <div class="col-4">
+              <img class="img-fluid" src="{% static 'img/nosotros3.jpg' %}" alt="Paseo">
+            </div>
+            <div class="col-2 texto">
+              <p>Especialmente para perros. Sabemos que necesitan salir de
+              vez en cuando, así que nos aseguramos que reciban un paseo diario.</p>
+            </div>
+        </div>
+      </div>
+
+      <div class="row contenedor-texto-imagen mb-3">
+        <div class="row titulo">
+          <h3>Otros cuidados</h3>
+        </div>
+        <div class="row">
+            <div class="col-4">
+              <img class="img-fluid" src="{% static 'img/nosotros9.jpg' %}" alt="Baño">
+              <img class="img-fluid" src="{% static 'img/nosotros5.jpg' %}" alt="Masaje">
+            </div>
+            <div class="col-2 texto">
+              <p>Además, contamos con baños regulares, y masajes eventuales, porque
+                ellos también necesitan relajarse.</p>
+            </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- fin instalaciones -->
+{% endblock content %}
+    
