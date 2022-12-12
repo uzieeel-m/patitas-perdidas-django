@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}- Acceso{% endblock title %}
+
+{% block content %}
+<div class="container pb-2">
+    <h1>Inicia sesión</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{form | crispy}}
+        <button class="btn boton" type="submit">Acceder</button>
+    </form>
+</div>
+{% endblock content %}

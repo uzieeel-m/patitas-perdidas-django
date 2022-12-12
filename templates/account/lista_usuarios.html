@@ -1,0 +1,74 @@
+<!-- ./templates/account/lista_usuarios.html -->
+{% extends '_base.html' %}
+
+{% block title %}- Administración de Usuarios{% endblock title %}
+
+{% block content %}
+
+    {% if user.is_staff %}
+    <div class="container">
+        <!-- sidebar opciones (se muestra cuando se clickea el boton)-->
+        <a class="boton-flotante" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+        <i class="fa-solid fa-chevron-right" style="color: #1d3557;"></i>
+        </a>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Opciones</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+
+                <div class="opcion-barra-lateral">
+                <a href=""><i class="fa-solid fa-paw"></i> Mis mascotas</a>
+                </div>
+                
+                {% if user.is_staff %}
+                <div class="opcion-barra-lateral">
+                <a href="{% url 'lista-usuarios' %}"><i class="fa-solid fa-user"></i> Administración de Usuarios</a>
+                </div>
+                {% endif %}
+                
+                <div class="opcion-barra-lateral">
+                <a href="{% url 'account_logout' %}"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- tabla de info de usuarios -->
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Primary Key</th>
+                <th scope="col">Nombre de usuario</th>
+                <th scope="col">Correo electrónico</th>
+                <th scope="col">Nombre y apellidos</th>
+                <th scope="col">Staff</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for usuario in lista_usuarios %}
+                <tr>
+                <th scope="row">{{usuario.pk}}</th>
+                <td>{{usuario.username}}</td>
+                <td>{{usuario.email}}</td>
+                <td>{{usuario.nombre}} {{usuario.apellidos}}</td>
+                {% if usuario.is_staff %}
+                <td><i class="fa-solid fa-circle-check"></i></td>
+                {% else %}
+                <td><i class="fa-solid fa-circle-xmark"></i></i></td>
+                {% endif %}
+                <td><a href="" class="btn boton boton-rojo"><i class="fa-solid fa-trash"></i> Eliminar usuario</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="container">
+        <p>¡No tienes los permisos para entrar a esta página!</p>
+        <a href="{% url 'inicio' %}">Ir a Inicio</a>
+    </div>
+    {% endif %}
+      
+{% endblock content %}
+    

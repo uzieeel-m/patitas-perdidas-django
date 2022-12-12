@@ -1,0 +1,31 @@
+<!-- ./plantillas/account/email_confirm.html -->
+{% extends '_base.html' %}
+{% load i18n %}
+{% load account %}
+
+{% block head_title %}
+    {% trans "Confirme su dirección de correo" %}
+{% endblock head_title %}
+
+
+{% block content %}
+<div class="container">
+    <h1>{% trans 'Confirme su dirección de correo' %}</h1>
+    {% if confirmation %}
+        {% user_display confirmation.email_address.user as user_display %}
+            <p>Por favor confirme que <a href="mailto: {{email}}">{{email}}</a> es una dirección de correo para el usuario {{user_display}}. </p>
+        {% endblocktrans %}
+        <form action="{% url 'account_confirm_email' confirmation.key %}" method="post">
+            {% csrf_token %}
+            <button class="btn boton" type="submit">{% trans 'Confirmar' %}</button>
+        </form>
+        {% else %}
+            {% url 'account_email' as email_url %}
+            <p> 
+                {% blocktrans with confirmation.email_address.email as email %}
+                Este enlace de confirmación ha expirado o es inválido. Por favor <a href="{{email}}">haga una nueva petición de confirmación de email</a>. 
+                {% enblocktrans %}
+            </p>
+    {% endif %}
+</div>
+{% endblock content %}

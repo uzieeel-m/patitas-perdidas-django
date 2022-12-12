@@ -1,7 +1,8 @@
 # ./usuarios/urls.py
 from django.urls import path
-# from .views import VistaPaginaRegistro
+from .views import VistaPerfilUsuario, VistaListaUsuarios
 
 urlpatterns = [
-    # path('registro/', VistaPaginaRegistro.as_view(), name='signup'),
+    path("perfil/<int:pk>", VistaPerfilUsuario.as_view(), name="perfil"),
+    path("lista-usuarios/", VistaListaUsuarios.as_view(), name="lista-usuarios"),
 ]

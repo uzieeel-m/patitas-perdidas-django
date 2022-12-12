@@ -44,6 +44,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     #external
     'whitenoise.runserver_nostatic',
+    "crispy_forms",
+    'crispy_bootstrap5',
+    'allauth',
+    'allauth.account',
     #local apps
     "pages",
     "mascotas",
