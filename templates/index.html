@@ -24,7 +24,7 @@
         <img src="{% static 'img/nosotros_principal.jpg' %}" style="width: 100%; height: 90vh; object-fit: cover;" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <div class="carousel-caption d-none d-md-block texto-principal">
-            <p>Conoce un poco sobre <span> Patitas Perdidas </span> </p>
+            <a href="{% url 'quienes-somos' %}" style="color: #f1faee;">Conoce un poco sobre <span> Patitas Perdidas </span> </a>
           </div>
         </div>
       </div>
@@ -33,19 +33,19 @@
         <img src="{% static 'img/adopta1.jpg' %}" style="width: 100%; height: 90vh; object-fit: cover;" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <div class="carousel-caption d-none d-md-block texto-principal">
-            <p>Adopta una <span>mascota</span> </p>
+            <a href="{% url 'lista-mascotas' %}" style="color: #f1faee;">Adopta una <span>mascota</span> </a>
           </div>
         </div>
       </div>
       <!-- Sección Blog -->
-      <div class="carousel-item h-auto">
+      <!-- <div class="carousel-item h-auto">
         <img src="{% static 'img/noticias1.jpg' %}" style="width: 100%; height: 90vh; object-fit: cover;" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <div class="carousel-caption d-none d-md-block texto-principal">
-            <p>Lee los últimos <span>artículos</span>!</p>
+            <a href="{% url 'quienes-somos' %}" style="color: #f1faee;">Lee los últimos <span>artículos</span>!</a>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -59,155 +59,33 @@
 
   <!-- Sección Recién llegados -->
   <section class="container mt-5">
-    <div class="row titulo">
-      <h2>Recién llegados</h2>
-    </div>
-    
-    
-    {% if lista_mascotas %}
       
-      {% for mascota in lista_mascotas %}
-        {{mascota.nombre}}
-      {% endfor %}
-
-    {% endif %}
-      
-      
-    <!-- pet list -->
-    <div class="row gy-5">
-      <!-- primer mascota -->
-      <div class="col">
-        <div class="card text-center mascota">
-          <img class="card-img-top" src="{% static 'img/mascota-1.jpg' %}" alt="Imagen Mascota">
-          <div class="card-body">
-            <p class="card-title">Lulú</p>
-            <p class="card-text">Jueguetona, Inteligente y Cariñosa</p>
-            <a href="#" class="btn boton">Conócelo</a>
-          </div>
-        </div>
-      </div>
-      <!-- primer mascota -->
-      <div class="col">
-        <div class="card mascota">
-          <img class="card-img-top" src="{% static 'img/mascota-1.jpg' %}" alt="Imagen Mascota">
-          <div class="card-body">
-            <p class="card-title">Lulú</p>
-            <p class="card-text">Jueguetona, Inteligente y Cariñosa</p>
-            <a href="#" class="btn boton">Conócelo</a>
-          </div>
-        </div>
-      </div>
-      <!-- primer mascota -->
-      <div class="col">
-        <div class="card mascota">
-          <img class="card-img-top" src="{% static 'img/mascota-1.jpg' %}" alt="Imagen Mascota">
-          <div class="card-body">
-            <p class="card-title">Lulú</p>
-            <p class="card-text">Jueguetona, Inteligente y Cariñosa</p>
-            <a href="#" class="btn boton">Conócelo</a>
-          </div>
-        </div>
+    <div class="card text-bg-dark">
+      <img src="{% static 'img/adopta-banner.jpg' %}" class="card-img" alt="Imagen Banner Adopta">
+      <div class="card-img-overlay">
+        <h5 class="card-title">¡Adopta una mascota!</h5>
+        <p class="card-text">Dale un vistazo a las mascotas en adopción</p>
+        <a href="{% url 'lista-mascotas' %}" class="btn boton boton-rojo">Ver mascotas</a>
       </div>
     </div>
-    <div class="row recien-llegados">
-      <a href="adopta.html" class="btn boton boton-rojo">Ver todos</a>
-    </div>
+      
   </section>
 
-  <!-- Sección artículos / historias -->
+  <!-- Sección agrega mascotas -->
   <section class="container mt-5">
-
-    <div class="row">
-      <!-- articulos recientes -->
-      <div class="col-md-7">
-        <!-- titulo -->
-        <div class="row titulo">
-          <h2>Artículos Recientes</h2>
-        </div>
-        <!-- contenedor articulos -->
-        <div class="row">
-          <!-- articulo 1 -->
-          <div class="row">
-            <div class="col">
-              <article class="card border-light entrada-blog cursor-pointer">
-                <div class="row">
-                  <div class="col-md-6">
-                    <img class="img-fluid" src="{% static 'img/articulo1.jpeg' %}" alt="Imagen Artículo 1">
-                  </div>
-                  <div class="col">
-                    <div class="card-body contenido-entrada">
-                      <a class="card-title" href="articulo1.html">
-                        <h3 >Por qué es importante el “microchip” en tu adoptado</h3>
-                      </a>
-                      <p class="card-subtitle">Escrito el: <span>08/11/2020</span> por <span>Belen Mota</span></p>
-                      <p class="card-text">Un microchip es un pequeño dispositivo
-                        que se implanta en perros y gatos para
-                        mantenerlos identificados de por vida.</p>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-          <!-- articulo 2 -->
-          <div class="row">
-            <div class="col">
-              <article class="card border-light entrada-blog cursor-pointer">
-                <div class="row">
-                  <div class="col-md-6">
-                    <img class="img-fluid" src="{% static 'img/articulo1.jpeg' %}" alt="Imagen Artículo 1">
-                  </div>
-                  <div class="col">
-                    <div class="card-body contenido-entrada">
-                      <a class="card-title" href="articulo1.html">
-                        <h3 >Por qué es importante el “microchip” en tu adoptado</h3>
-                      </a>
-                      <p class="card-subtitle">Escrito el: <span>08/11/2020</span> por <span>Belen Mota</span></p>
-                      <p class="card-text">Un microchip es un pequeño dispositivo
-                        que se implanta en perros y gatos para
-                        mantenerlos identificados de por vida.</p>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-  
-      </div>
-  
-      <!-- historias memorables -->
-      <div class="col">
-        <!-- titulo -->
-        <div class="row titulo">
-          <h2>Historias memorables</h2>
-        </div>
-        <!-- contenedor historias -->
-        <div class="row">
-          <div class="col">
-            <!-- historia -->
-            <div class="card border-light text-bg-dark m-5 overflow-hidden cursor-pointer">
-              <img src="{% static 'img/historia-1.jpg' %}" class="card-img" alt="...">
-              <div class="card-img-overlay texto-historia">
-                <h4 class="card-title">Henry y Cal</h4>
-                <p class="card-text">Henry adoptó al peludo Kal cuando apenas
-                  era un cachorro, ahora viven muy felices.</p>
-              </div>
-            </div>
-            <!-- historia -->
-            <div class="card border-light text-bg-dark m-5 overflow-hidden cursor-pointer">
-              <img src="{% static 'img/historia-1.jpg' %}" class="card-img" alt="...">
-              <div class="card-img-overlay texto-historia">
-                <h4 class="card-title">Henry y Cal</h4>
-                <p class="card-text">Henry adoptó al peludo Kal cuando apenas
-                  era un cachorro, ahora viven muy felices.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+      
+    <div class="card text-bg-dark">
+      <img src="{% static 'img/adopta3.jpg' %}" class="card-img" alt="Imagen Banner Adopta">
+      <div class="card-img-overlay">
+        <h5 class="card-title titulo-img-card">Registra mascotas</h5>
+        <p class="card-text texto-img-card">¿Tienes una mascota a la que ya no puedes cuidar? Regístrala y búscale un nuevo hogar</p>
+        <p class="card-text" style="text-align: center;">
+          <a href="{% url 'account_signup' %}" class="btn boton boton-rojo">Regístrate</a> o 
+          <a href="{% url 'account_login' %}" class="btn boton">Inicia Sesión</a>
+        </p>
       </div>
     </div>
-
+      
   </section>
 {% endblock content %}
     

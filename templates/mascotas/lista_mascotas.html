@@ -1,0 +1,34 @@
+<!-- ./plantillas/mascotas/lista_mascotas.html -->
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}- Adopta{% endblock title %}
+    
+{% block content %}
+<!-- Seccion principal -->
+<div class="seccion seccion-principal texto-principal">
+    <img src="{% static 'img/adopta1.jpg' %}" alt="Imagen Principal Adopta">
+    <div class="texto-principal texto-principal-absolute">
+        <h1><span>Adopta</span> una mascota</h1>
+    </div>
+</div>
+<!-- fin Seccion principal -->
+<div class="container">
+        <h2>Mascotas en adopción</h2>
+
+        {% for mascota in lista_mascotas %}
+        <div class="contenedor-mascotas">
+            <div class="card mascota">
+                <img class="card-img-top" src="{% static 'img/mascota-1.jpg' %}" alt="Imagen Mascota">
+                <div class="card-body">
+                    <p class="card-title">{{mascota.nombre}}</p>
+                    <p class="card-text">{{mascota.descripcion}}</p>
+                    <a href="{% url 'detalle-mascota' mascota.pk %}" class="btn boton">Conócelo</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+            
+    </div>
+{% endblock content %}
+    
