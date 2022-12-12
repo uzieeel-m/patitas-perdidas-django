@@ -1,0 +1,38 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}- Conócelo{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <section class="seccion info-mascota padding-2rem">
+            <div class="titulo">
+              <h2>Información sobre la mascota</h2>
+            </div>
+            <div class="flex-box contenedor-imagen-texto descripcion">
+              <div class="row">
+                <div class="col-3" >
+                  <img class="img-fluid" src="{% static 'img/mascota-1.jpg' %}" alt="Imagen Mascota">
+                </div>
+                <div class="col-9" >
+                  <div class="texto">
+                    <p>Nombre: {{mascota.nombre}}</p>
+                    
+                    {% if mascota.genero == "h" %}
+                    <p>Género: Hembra</p>
+                    {% else %}
+                    <p>Género: Macho</p>
+                    {% endif %}
+                      
+                    <p>Edad: {{mascota.edad}}</p>
+                    <p>Tamaño: {{mascota.tamanio}}</p>
+                    <p>Descripción: {{mascota.descripcion}}</p>
+                    <a class="btn boton">¡Adopta ahora!</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+    </div>
+{% endblock content %}
+    
