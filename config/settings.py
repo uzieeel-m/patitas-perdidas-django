@@ -163,3 +163,8 @@ AUTHENTICATION_BACKENDS = (
 )
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'contacto@patitasperdidas.com'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS=True
+EMAIL_PORT=587
+EMAIL_HOST_USER='alu.18131273@correo.itlalaguna.edu.mx'
+EMAIL_HOST_PASSWORD = ' '
