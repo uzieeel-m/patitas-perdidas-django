@@ -22,6 +22,9 @@ h3{
 a{
   text-decoration: none;
 }
+input:not([type="submit"]){
+  font-size: 1.8rem!important;
+}
 .contenedor{
   /* max-width: 120rem; */
   margin: 0 auto;
@@ -116,6 +119,22 @@ a{
     #457b9d
     #1d3557
 */
+.boton-flotante{
+  position: fixed;
+  top: 50vh;
+  left: 0;
+  z-index: 2;
+}
+.opcion-barra-lateral{
+  width: 100%;
+  color: #1d3557;
+  border-top: 1px solid #1d3557;
+  border-bottom: 1px solid #1d3557;
+}
+.opcion-barra-lateral:hover{
+  color: #fff;
+  background-color: #457b9d;
+}
 .barra{
   flex-wrap: nowrap;
   background-color: #f1faee;

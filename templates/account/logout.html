@@ -1,0 +1,17 @@
+<!-- ./plantillas/account/logout.html -->
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}- Cerrar sesión {% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1>Salir</h1>
+    <p>¿Estás seguro de que desea salir?</p>
+    <form method="post">
+        {% csrf_token %}
+        {{form | crispy}}
+        <a href="{% url 'inicio' %}" class="btn boton" type="submit">Regresar</a>
+        <button class="btn boton boton-rojo" type="submit">Salir</button>
+    </form>
+</div>
+{% endblock content %}
