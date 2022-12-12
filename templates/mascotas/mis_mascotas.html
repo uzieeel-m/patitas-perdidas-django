@@ -1,0 +1,60 @@
+<!-- ./templates/mascotas/mis_mascotas.html -->
+{% extends '_base.html' %}
+{% load static %}
+{% block title %}- Mis Mascotas{% endblock title %}
+
+{% block content %}
+    <!-- sidebar opciones (se muestra cuando se clickea el boton)-->
+    <a class="boton-flotante" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+        <i class="fa-solid fa-chevron-right" style="color: #1d3557;"></i>
+    </a>
+    <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        Button with data-bs-target
+    </button> -->
+    
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Opciones</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+
+        <div class="opcion-barra-lateral">
+            <a href="{% url 'mis-mascotas' %}"><i class="fa-solid fa-paw"></i> Mis mascotas</a>
+        </div>
+        
+        {% if user.is_staff %}
+        <div class="opcion-barra-lateral">
+            <a href="{% url 'lista-usuarios' %}"><i class="fa-solid fa-user"></i> Administración de Usuarios</a>
+        </div>
+        {% endif %}
+        
+        <div class="opcion-barra-lateral">
+            <a href="{% url 'account_logout' %}"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</a>
+        </div>
+        </div>
+    </div>
+
+    <div class="container">
+        
+        {% for mascota in lista_mascotas %}
+            
+            {% if mascota.idUsrRegistro == user %}
+            <div class="contenedor-mascotas">
+                <div class="card mascota">
+                    <img class="card-img-top" src="{% static 'img/mascota-1.jpg' %}" alt="Imagen Mascota">
+                    <div class="card-body">
+                        <p class="card-title">{{mascota.nombre}}</p>
+                        <p class="card-text">{{mascota.descripcion}}</p>
+                        <a href="{% url 'editar-mascota' mascota.pk %}" class="btn boton"><i class="fa-solid fa-pen-to-square"></i>Editar</a>
+                        <a href="{% url 'eliminar-mascota' mascota.pk %}" class="btn boton boton-rojo"><i class="fa-solid fa-trash"></i>Eliminar</a>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+                
+        {% endfor %}
+            <a href="{% url 'agregar-mascota' %}" class="btn boton"><i class="fa-solid fa-plus"></i>Agregar mascota</a>
+    </div>
+{% endblock content %}
+    

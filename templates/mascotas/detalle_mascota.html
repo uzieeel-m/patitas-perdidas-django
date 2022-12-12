@@ -27,7 +27,13 @@
                     <p>Edad: {{mascota.edad}}</p>
                     <p>Tamaño: {{mascota.tamanio}}</p>
                     <p>Descripción: {{mascota.descripcion}}</p>
-                    <a class="btn boton">¡Adopta ahora!</a>
+                    
+                    {% if mascota.idUsrRegistro == user %}
+                      <a href="{% url 'editar-mascota' mascota.pk %}" class="btn boton"><i class="fa-solid fa-pen-to-square"></i>Editar</a>
+                      <a href="{% url 'eliminar-mascota' mascota.pk %}" class="btn boton boton-rojo"><i class="fa-solid fa-trash"></i>Eliminar</a>
+                    {% else %}
+                      <a class="btn boton">¡Adopta ahora!</a>
+                    {% endif %}
                   </div>
                 </div>
               </div>

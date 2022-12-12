@@ -1,0 +1,17 @@
+<!-- .templates/mascotas/agregar_mascota.html -->
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}- Agregar Mascota{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            {{form | crispy}}
+            <a href="{% url 'mis-mascotas' %}" class="btn boton boton-rojo"><i class="fa-solid fa-ban"></i>Cancelar</a>
+            <button type="submit" class="btn boton"><i class="fa-solid fa-floppy-disk"></i>Guardar</button>
+        </form>
+    </div>
+{% endblock content %}
+    

@@ -19,7 +19,7 @@
             <div class="offcanvas-body">
 
                 <div class="opcion-barra-lateral">
-                <a href=""><i class="fa-solid fa-paw"></i> Mis mascotas</a>
+                <a href="{% url 'mis-mascotas' %}"><i class="fa-solid fa-paw"></i> Mis mascotas</a>
                 </div>
                 
                 {% if user.is_staff %}
