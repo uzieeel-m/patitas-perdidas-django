@@ -16,18 +16,20 @@
 <div class="container">
         <h2>Mascotas en adopción</h2>
 
-        {% for mascota in lista_mascotas %}
         <div class="contenedor-mascotas">
-            <a class="card mascota" href="{% url 'detalle-mascota' mascota.pk %}">
-                <img class="card-img-top" src="{% static 'img/mascota-1.jpg' %}" alt="Imagen Mascota">
-                <div class="card-body">
-                    <p class="card-title">{{mascota.nombre}}</p>
-                    <p class="card-text">{{mascota.descripcion}}</p>
+        {% for mascota in lista_mascotas %}
+            <div class="mascota contenedor-imagen-texto">
+                <div class="imagen">
+                    <img src="{% static 'img/mascota-1.jpg' %}" alt="Imagen Mascota">
+                </div>
+                <div class="texto">
+                    <a class="nombre-mascota" href="{% url 'detalle-mascota' mascota.pk %}">{{mascota.nombre}}</a>
+                    <p class="">{{mascota.descripcion}}</p>
                     <a href="{% url 'detalle-mascota' mascota.pk %}" class="btn boton">Conócelo</a>
                 </div>
-            </a>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
             
     </div>
 {% endblock content %}
