@@ -29,11 +29,40 @@
                     <p>Descripción: {{mascota.descripcion}}</p>
                     
                     {% if mascota.idUsrRegistro == user %}
-                      <a href="{% url 'editar-mascota' mascota.pk %}" class="btn boton"><i class="fa-solid fa-pen-to-square"></i>Editar</a>
-                      <a href="{% url 'eliminar-mascota' mascota.pk %}" class="btn boton boton-rojo"><i class="fa-solid fa-trash"></i>Eliminar</a>
+                      <a href="{% url 'editar-mascota' mascota.pk %}" class="btn boton"><i class="fa-solid fa-pen-to-square mr-2"></i>Editar</a>
+                      <a href="{% url 'eliminar-mascota' mascota.pk %}" class="btn boton boton-rojo"><i class="fa-solid fa-trash mr-2"></i>Eliminar</a>
                     {% else %}
                       <a class="btn boton">¡Adopta ahora!</a>
                     {% endif %}
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="row">
+                    <h2>Comentarios sobre {{mascota.nombre}}</h2>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      {% for comentario in mascota.comentarios %}
+                      <div class="row">
+                        <figure>
+                          <blockquote class="blockquote">
+                            <p>{{comentario.cuerpo}}</p>
+                          </blockquote>
+                          <figcaption class="blockquote-footer">
+                            por {{comentario.autor}}
+                            <!-- Someone famous in <cite title="Source Title">Source Title</cite> -->
+                          </figcaption>
+                        </figure>
+                      </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <p>¿Qué piensas sobre {{mascota.nombre}}? <a href="{% url 'escribir-comentario' mascota.pk %}">Escribe un comentario</a> </p>
+                    </div>
                   </div>
                 </div>
               </div>

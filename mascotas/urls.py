@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import VistaDetalleMascota, VistaListaMascotas, VistaMisMascotas, VistaEditarMascota, VistaEliminarMascota, VistaAgregarMascota
+from .views import VistaDetalleMascota, VistaListaMascotas, VistaMisMascotas, VistaEditarMascota, VistaEliminarMascota, VistaAgregarMascota, VistaEscribirComentario
 
 urlpatterns = [
     path('detalle-mascota/<int:pk>', VistaDetalleMascota.as_view(), name="detalle-mascota"),
@@ -8,4 +8,5 @@ urlpatterns = [
     path('editar-mascota/<int:pk>', VistaEditarMascota.as_view(), name="editar-mascota"),
     path('eliminar-mascota/<int:pk>', VistaEliminarMascota.as_view(), name="eliminar-mascota"),
     path('agregar-mascota/', VistaAgregarMascota.as_view(), name="agregar-mascota"),
+    path('escribir-comentario/<int:pk>', VistaEscribirComentario.as_view(), name="escribir-comentario"),
 ]

@@ -1,0 +1,17 @@
+<!-- ./templates/usuarios/editar_usuario.html -->
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}- Editar Usuario {% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            {{form | crispy}}
+            <a class="btn boton boton-rojo" href="{% url 'perfil' user.pk %}"><i class="fa-solid fa-ban mr-2"></i>Cancelar</a>
+            <button class="btn boton" type="submit" ><i class="fa-solid fa-floppy-disk mr-2"></i>Guardar</button>
+        </form>
+    </div>
+{% endblock content %}
+    

@@ -8,8 +8,8 @@
         <form method="post">
             {% csrf_token %}
             <p>¿Estás seguro de querer eliminar a "{{mascota.nombre}}"?</p>
-            <a href="{% url 'mis-mascotas' %}" class="btn boton"><i class="fa-solid fa-ban"></i>Cancelar</a>
-            <button type="submit" class="btn boton boton-rojo"><i class="fa-solid fa-trash"></i>Eliminar</button>
+            <a href="{% url 'mis-mascotas' %}" class="btn boton"><i class="fa-solid fa-ban mr-2"></i>Cancelar</a>
+            <button type="submit" class="btn boton boton-rojo"><i class="fa-solid fa-trash mr-2"></i>Eliminar</button>
         </form>
     </div>
 {% endblock content %}
