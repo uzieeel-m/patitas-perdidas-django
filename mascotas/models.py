@@ -22,26 +22,22 @@ class Mascota(models.Model):
         get_user_model(),
         on_delete= models.CASCADE,
     )
-    # idUsrAdopta = models.ForeignKey(
-    #     get_user_model(),
-    #     on_delete= models.CASCADE,
-    #     null=True,
-    #     blank=True,
-    # )
+    imagen = models.ImageField(null=True, blank=True, upload_to="img/")
+    
     def __str__(self):
         return self.nombre
 
-# class Comentario(models.Model):
-#     mascota = models.ForeignKey(
-#         Mascota,
-#         on_delete=models.CASCADE,
-#         related_name='comentarios',
-#     )
-#     cuerpo = models.CharField(max_length=255)
-#     autor = models.ForeignKey(
-#         get_user_model(),
-#         on_delete=models.CASCADE,
-    # )
+class Comentario(models.Model):
+    mascota = models.ForeignKey(
+        Mascota,
+        on_delete=models.CASCADE,
+        related_name='comentarios',
+    )
+    cuerpo = models.CharField(max_length=255)
+    autor = models.ForeignKey(
+        get_user_model(),
+        on_delete=models.CASCADE,
+    )
 
-    # def __str__(self):
-    #     return self.cuerpo
+    def __str__(self):
+        return self.cuerpo

@@ -37,6 +37,25 @@
                   </div>
                 </div>
               </div>
+              <div class="row">
+                <div class="col">
+                  <div class="row">
+                    <h2>Comentarios sobre {{mascota.nombre}}</h2>
+                  </div>
+                  {% for comentario in mascota.comentarios.all %}
+                  <div class="row">
+                    <figure>
+                      <blockquote class="blockquote">
+                        <p>{{comentario.cuerpo}}</p>
+                      </blockquote>
+                      <figcaption class="blockquote-footer">
+                        {{comentario.autor}}
+                      </figcaption>
+                    </figure>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
             </div>
           </section>
     </div>
