@@ -37,7 +37,7 @@ class Comentario(models.Model):
         on_delete=models.CASCADE,
         related_name='comentarios',
     )
-    cuerpo = models.CharField(max_length=255)
+    comentario = models.CharField(max_length=255)
     autor = models.ForeignKey(
         get_user_model(),
         on_delete=models.CASCADE,
