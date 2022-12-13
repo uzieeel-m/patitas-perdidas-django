@@ -35,25 +35,25 @@
         </div>
     </div>
 
-    <div class="container">
-        
+    <div class="container mb-3">
+        <h2>Mis Mascotas</h2>
+        <div class="contenedor-mascotas">
         {% for mascota in lista_mascotas %}
-            
             {% if mascota.idUsrRegistro == user %}
-            <div class="contenedor-mascotas">
-                <a class="card mascota" href="{% url 'detalle-mascota' mascota.pk %}">
-                    <img class="card-img-top" src="{% static 'img/mascota-1.jpg' %}" alt="Imagen Mascota">
-                    <div class="card-body">
-                        <p class="card-title">{{mascota.nombre}}</p>
-                        <p class="card-text">{{mascota.descripcion}}</p>
-                        <a href="{% url 'editar-mascota' mascota.pk %}" class="btn boton"><i class="fa-solid fa-pen-to-square"></i>Editar</a>
-                        <a href="{% url 'eliminar-mascota' mascota.pk %}" class="btn boton boton-rojo"><i class="fa-solid fa-trash"></i>Eliminar</a>
-                    </div>
-                </a>
+            <div class="mascota">
+                <div class="imagen">
+                    <img src="{% static 'img/mascota-1.jpg' %}" alt="Imagen Mascota">
+                </div>
+                <div class="texto">
+                    <p class="nombre-mascota">{{mascota.nombre}}</p>
+                    <p>{{mascota.descripcion}}</p>
+                    <a href="{% url 'editar-mascota' mascota.pk %}" class="btn boton"><i class="fa-solid fa-pen-to-square"></i>Editar</a>
+                    <a href="{% url 'eliminar-mascota' mascota.pk %}" class="btn boton boton-rojo"><i class="fa-solid fa-trash"></i>Eliminar</a>
+                </div>
             </div>
             {% endif %}
-                
         {% endfor %}
+        </div>
             <a href="{% url 'agregar-mascota' %}" class="btn boton"><i class="fa-solid fa-plus mr-2"></i>Agregar mascota</a>
     </div>
 {% endblock content %}

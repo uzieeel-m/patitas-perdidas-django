@@ -100,6 +100,9 @@ input:not([type="submit"]){
 .imagen{
   flex-basis: 40%;
 }
+.imagen img{
+  width: 100%;
+}
 .texto{
   flex-basis: 60%;
   text-align: center;
@@ -132,6 +135,8 @@ input:not([type="submit"]){
 }
 .contenedor-mascotas{
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
   justify-content: space-around;
   align-items: center;
@@ -161,6 +166,10 @@ input:not([type="submit"]){
   color: #1d3557;
   border-top: 1px solid #1d3557;
   padding: 10px 0;
+}
+.opcion-barra-lateral a{
+  color: #1d3557;
+  text-decoration: none;
 }
 .opcion-barra-lateral:hover{
   color: #fff;
@@ -266,7 +275,7 @@ input:not([type="submit"]){
   grid-column: 1 / 4;
 }
 .mascota {
-  flex-basis: calc( 100% / 3 );
+  flex-basis: calc(100% / 3) ;
   border-radius: 5px;
   border: 1px solid #a8dadc;
   background-color: #f1faee;
