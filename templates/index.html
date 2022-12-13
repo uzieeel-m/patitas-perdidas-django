@@ -58,7 +58,7 @@
   </div>
 
   <!-- Sección Recién llegados -->
-  <section class="container mt-5">
+  <!-- <section class="container mt-5">
       
     <div class="card text-bg-dark">
       <img src="{% static 'img/adopta-banner.jpg' %}" class="card-img" alt="Imagen Banner Adopta">
@@ -69,10 +69,10 @@
       </div>
     </div>
       
-  </section>
+  </section> -->
 
   <!-- Sección agrega mascotas -->
-  <section class="container mt-5">
+  <!-- <section class="container mt-5">
       
     <div class="card text-bg-dark">
       <img src="{% static 'img/adopta3.jpg' %}" class="card-img" alt="Imagen Banner Adopta">
@@ -84,8 +84,36 @@
           <a href="{% url 'account_login' %}" class="btn boton">Inicia Sesión</a>
         </p>
       </div>
-    </div>
-      
+    </div>    
   </section>
+<section> -->
+  <section class="container mt-5">
+  <div class="contenedorTexto" style="width: 100rem;margin:10px;">
+    <img src="{% static 'img/adopta-banner.jpg' %}" class="card-img" alt="Imagen Banner Adopta">
+    <div class="registroEInicio">
+        <p>¡Adopta una mascota! Dale un vistazo a las mascotas en adopción</p>
+    </div>
+    <div class="contenedorBotones">
+      <p class="card-text" style="text-align: center;">
+        <a href="{% url 'lista-mascotas' %}" class="btn boton boton-rojo">Ver mascotas</a>
+      </p>   
+    </div>
+  </div>
+  </section>
+</section>
+  <div class="contenedorTexto" style="width:100rem;margin-left: 120px;">
+    <img src="{% static 'img/adopta3.jpg' %}" class="card-img" alt="Imagen Banner Adopta">
+
+    <div class="registroEInicio">
+        <p>¿Tienes una mascota a la que ya no puedes cuidar? Regístrala y búscale un nuevo hogar</p>
+    </div>
+    <div class="contenedorBotones">
+      <p class="card-text" style="text-align: center;">
+        <a href="{% url 'account_signup' %}" class="btn boton boton-rojo">Regístrate</a> o 
+        <a href="{% url 'account_login' %}" class="btn boton">Inicia Sesión</a>
+      </p>   
+    </div>
+  </div>
+</section>
 {% endblock content %}
     
