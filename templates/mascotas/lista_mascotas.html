@@ -18,14 +18,14 @@
 
         {% for mascota in lista_mascotas %}
         <div class="contenedor-mascotas">
-            <div class="card mascota">
+            <a class="card mascota" href="{% url 'detalle-mascota' mascota.pk %}">
                 <img class="card-img-top" src="{% static 'img/mascota-1.jpg' %}" alt="Imagen Mascota">
                 <div class="card-body">
                     <p class="card-title">{{mascota.nombre}}</p>
                     <p class="card-text">{{mascota.descripcion}}</p>
                     <a href="{% url 'detalle-mascota' mascota.pk %}" class="btn boton">Conócelo</a>
                 </div>
-            </div>
+            </a>
         </div>
         {% endfor %}
             

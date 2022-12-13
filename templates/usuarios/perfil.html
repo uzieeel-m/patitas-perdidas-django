@@ -23,17 +23,17 @@
         <div class="offcanvas-body">
 
           <div class="opcion-barra-lateral">
-            <a href="{% url 'mis-mascotas' %}"><i class="fa-solid fa-paw"></i> Mis mascotas</a>
+            <a href="{% url 'mis-mascotas' %}"><i class="fa-solid fa-paw mr-2"></i> Mis mascotas</a>
           </div>
           
           {% if user.is_staff %}
           <div class="opcion-barra-lateral">
-            <a href="{% url 'lista-usuarios' %}"><i class="fa-solid fa-user"></i> Administración de Usuarios</a>
+            <a href="{% url 'lista-usuarios' %}"><i class="fa-solid fa-user mr-2"></i> Administración de Usuarios</a>
           </div>
           {% endif %}
           
           <div class="opcion-barra-lateral">
-            <a href="{% url 'account_logout' %}"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</a>
+            <a href="{% url 'account_logout' %}"><i class="fa-solid fa-right-from-bracket mr-2"></i> Cerrar sesión</a>
           </div>
         </div>
       </div>
@@ -45,8 +45,8 @@
         <p>Nombre: {{user.nombre}}</p>
         <p>Apellido/s: {{user.apellidos}}</p>
         <p>Correo electrónico: {{user.email}}</p>
-        <a class="btn boton" href="#">Actualizar información</a>
-        <a href="#" class="btn boton boton-rojo">Eliminar cuenta</a>
+        <a class="btn boton" href="{% url 'editar-usuario' user.pk %}">Actualizar información</a>
+        <a href="{% url 'eliminar-usuario' user.pk %}" class="btn boton boton-rojo">Eliminar cuenta</a>
     </div>
 </div>
 {% endblock content %}

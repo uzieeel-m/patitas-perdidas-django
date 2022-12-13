@@ -1,0 +1,20 @@
+<!-- ./templates/account/eliminar_usuario.html -->
+{% extends '_base.html' %}
+
+{% block title %}- Eliminar usuario{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            <p>¿Estás seguro de querer eliminar el usuario "{{user.username}}"?</p>
+            {% if user.is_staff %}
+            <a href="{% url 'lista-usuarios' %}" class="btn boton"><i class="fa-solid fa-ban mr-2"></i>Cancelar</a>
+            {% else %}
+            <a href="{% url 'perfil' user.pk %}" class="btn boton"><i class="fa-solid fa-ban mr-2"></i>Cancelar</a>
+            {% endif %}
+            <button type="submit" class="btn boton boton-rojo"><i class="fa-solid fa-trash mr-2"></i>Eliminar</button>
+        </form>
+    </div>
+{% endblock content %}
+    

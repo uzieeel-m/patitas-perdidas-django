@@ -43,3 +43,11 @@ class VistaAgregarMascota(CreateView):
     def form_valid(self, form):
         form.instance.idUsrRegistro = self.request.user
         return super().form_valid(form)
+
+class VistaEscribirComentario(UpdateView):
+    model = Mascota
+    idMascota = str(model.pk)
+    context_object_name = "mascota"
+    success_url = reverse_lazy('detalle-mascota/'+idMascota)
+    template_name = "mascotas/editar_mascota.html"
+    fields = ('comentarios')

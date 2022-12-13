@@ -19,17 +19,17 @@
             <div class="offcanvas-body">
 
                 <div class="opcion-barra-lateral">
-                <a href="{% url 'mis-mascotas' %}"><i class="fa-solid fa-paw"></i> Mis mascotas</a>
+                <a href="{% url 'mis-mascotas' %}"><i class="fa-solid fa-paw mr-2"></i> Mis mascotas</a>
                 </div>
                 
                 {% if user.is_staff %}
                 <div class="opcion-barra-lateral">
-                <a href="{% url 'lista-usuarios' %}"><i class="fa-solid fa-user"></i> Administración de Usuarios</a>
+                <a href="{% url 'lista-usuarios' %}"><i class="fa-solid fa-user mr-2"></i> Administración de Usuarios</a>
                 </div>
                 {% endif %}
                 
                 <div class="opcion-barra-lateral">
-                <a href="{% url 'account_logout' %}"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</a>
+                <a href="{% url 'account_logout' %}"><i class="fa-solid fa-right-from-bracket mr-2"></i> Cerrar sesión</a>
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@
                 {% else %}
                 <td><i class="fa-solid fa-circle-xmark"></i></i></td>
                 {% endif %}
-                <td><a href="" class="btn boton boton-rojo"><i class="fa-solid fa-trash"></i> Eliminar usuario</a></td>
+                <td><a href="{% url 'eliminar-usuario' usuario.pk %}" class="btn boton boton-rojo"><i class="fa-solid fa-trash mr-2"></i> Eliminar usuario</a></td>
                 </tr>
                 {% endfor %}
             </tbody>

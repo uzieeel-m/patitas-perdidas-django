@@ -137,20 +137,37 @@ input:not([type="submit"]){
   align-items: center;
 }
 .boton-flotante{
+  color: #f1faee;
+  font-size: 2rem;
+  left: 0;
   position: fixed;
   top: 10vh;
-  left: 0;
   z-index: 2;
+}
+.boton-flotante::before{
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 10vh;
+  min-width: 30px;
+  height: 50px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 23px;
+  background-color: #457b9d;
+  z-index: 3;
 }
 .opcion-barra-lateral{
   width: 100%;
   color: #1d3557;
   border-top: 1px solid #1d3557;
-  border-bottom: 1px solid #1d3557;
+  padding: 10px 0;
 }
 .opcion-barra-lateral:hover{
   color: #fff;
   background-color: #457b9d;
+}
+.opcion-barra-lateral:last-child{
+  border-bottom: 1px solid #1d3557;
 }
 .barra{
   flex-wrap: nowrap;

@@ -9,6 +9,7 @@
         {% csrf_token %}
         {{form | crispy}}
         <button class="btn boton" type="submit">Acceder</button>
+        <p>¿No tienes una cuenta? Crea una <a href="{% url 'account_signup' %}">aquí</a>.</p>
     </form>
 </div>
 {% endblock content %}

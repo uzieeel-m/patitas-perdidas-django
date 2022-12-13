@@ -20,17 +20,17 @@
         <div class="offcanvas-body">
 
         <div class="opcion-barra-lateral">
-            <a href="{% url 'mis-mascotas' %}"><i class="fa-solid fa-paw"></i> Mis mascotas</a>
+            <a href="{% url 'mis-mascotas' %}"><i class="fa-solid fa-paw mr-2"></i> Mis mascotas</a>
         </div>
         
         {% if user.is_staff %}
         <div class="opcion-barra-lateral">
-            <a href="{% url 'lista-usuarios' %}"><i class="fa-solid fa-user"></i> Administración de Usuarios</a>
+            <a href="{% url 'lista-usuarios' %}"><i class="fa-solid fa-user mr-2"></i> Administración de Usuarios</a>
         </div>
         {% endif %}
         
         <div class="opcion-barra-lateral">
-            <a href="{% url 'account_logout' %}"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</a>
+            <a href="{% url 'account_logout' %}"><i class="fa-solid fa-right-from-bracket mr-2"></i> Cerrar sesión</a>
         </div>
         </div>
     </div>
@@ -41,7 +41,7 @@
             
             {% if mascota.idUsrRegistro == user %}
             <div class="contenedor-mascotas">
-                <div class="card mascota">
+                <a class="card mascota" href="{% url 'detalle-mascota' mascota.pk %}">
                     <img class="card-img-top" src="{% static 'img/mascota-1.jpg' %}" alt="Imagen Mascota">
                     <div class="card-body">
                         <p class="card-title">{{mascota.nombre}}</p>
@@ -49,12 +49,12 @@
                         <a href="{% url 'editar-mascota' mascota.pk %}" class="btn boton"><i class="fa-solid fa-pen-to-square"></i>Editar</a>
                         <a href="{% url 'eliminar-mascota' mascota.pk %}" class="btn boton boton-rojo"><i class="fa-solid fa-trash"></i>Eliminar</a>
                     </div>
-                </div>
+                </a>
             </div>
             {% endif %}
                 
         {% endfor %}
-            <a href="{% url 'agregar-mascota' %}" class="btn boton"><i class="fa-solid fa-plus"></i>Agregar mascota</a>
+            <a href="{% url 'agregar-mascota' %}" class="btn boton"><i class="fa-solid fa-plus mr-2"></i>Agregar mascota</a>
     </div>
 {% endblock content %}
     
