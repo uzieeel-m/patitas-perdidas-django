@@ -4,7 +4,7 @@
 {% block title %}- Eliminar usuario{% endblock title %}
 
 {% block content %}
-    <div class="container">
+    <div class="container mt-3 mb-3">
         <form method="post">
             {% csrf_token %}
             <p>¿Estás seguro de querer eliminar el usuario "{{user.username}}"?</p>

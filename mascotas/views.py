@@ -24,7 +24,7 @@ class VistaEditarMascota(UpdateView):
     context_object_name = "mascota"
     success_url= reverse_lazy('mis-mascotas')
     template_name = "mascotas/editar_mascota.html"
-    fields = ('nombre', 'genero', 'edad', 'tamanio', 'descripcion')
+    fields = ('nombre', 'genero', 'edad', 'tamanio', 'descripcion', 'imagen')
 
 class VistaEliminarMascota(DeleteView):
     model = Mascota
@@ -37,7 +37,7 @@ class VistaAgregarMascota(CreateView):
     context_object_name = "mascota"
     success_url= reverse_lazy('mis-mascotas')
     template_name = "mascotas/agregar_mascota.html"
-    fields = ('nombre', 'genero', 'edad', 'tamanio', 'descripcion')
+    fields = ('nombre', 'genero', 'edad', 'tamanio', 'descripcion', 'imagen')
 
     #método para decirle a django quién es el usuario que registra la mascota
     def form_valid(self, form):

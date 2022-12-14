@@ -22,7 +22,7 @@ class Mascota(models.Model):
         get_user_model(),
         on_delete= models.CASCADE,
     )
-    imagen = models.ImageField(null=True, blank=True, upload_to="img/")
+    imagen = models.ImageField(null=True, blank=True, upload_to="media/img/")
     
     def __str__(self):
         return self.nombre

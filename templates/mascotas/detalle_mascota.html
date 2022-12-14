@@ -4,7 +4,7 @@
 {% block title %}- Conócelo{% endblock title %}
 
 {% block content %}
-    <div class="container">
+    <div class="container mt-3 mb-3">
         <section class="seccion info-mascota padding-2rem">
             <div class="titulo">
               <h2>Información sobre la mascota</h2>
@@ -12,7 +12,11 @@
             <div class="flex-box contenedor-imagen-texto descripcion">
               <div class="row">
                 <div class="col-3" >
-                  <img class="img-fluid" src="{% static 'img/mascota-1.jpg' %}" alt="Imagen Mascota">
+                  {% if mascota.imagen %}
+                  <img class="img-fluid" src="{{mascota.imagen.url}}" alt="{{mascota.nombre}}">
+                  {% else %}
+                  <img class="img-fluid" src="{% static 'img/icono.png' %}" alt="Imagen Mascota">
+                  {% endif %}
                 </div>
                 <div class="col-9" >
                   <div class="texto">

@@ -175,4 +175,5 @@ EMAIL_HOST_USER='alu.18131273@correo.itlalaguna.edu.mx'
 EMAIL_HOST_PASSWORD = ' '
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+# MEDIA_ROOT = BASE_DIR / 'media/'
+MEDIA_ROOT = str(BASE_DIR.joinpath('media'))

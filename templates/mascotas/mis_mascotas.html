@@ -35,17 +35,21 @@
         </div>
     </div>
 
-    <div class="container mb-3">
+    <div class="container mt-3 mb-3">
         <h2>Mis Mascotas</h2>
         <div class="contenedor-mascotas">
         {% for mascota in lista_mascotas %}
             {% if mascota.idUsrRegistro == user %}
             <div class="mascota">
                 <div class="imagen">
-                    <img src="{% static 'img/mascota-1.jpg' %}" alt="Imagen Mascota">
+                    {% if mascota.imagen %}
+                    <img class="img-fluid" src="{{mascota.imagen.url}}" alt="{{mascota.nombre}}">
+                    {% else %}
+                    <img class="img-fluid" src="{% static 'img/icono.png' %}" alt="Imagen Mascota">
+                    {% endif %}
                 </div>
                 <div class="texto">
-                    <p class="nombre-mascota">{{mascota.nombre}}</p>
+                    <a class="nombre-mascota" href="{% url 'detalle-mascota' mascota.pk %}">{{mascota.nombre}}</a>
                     <p>{{mascota.descripcion}}</p>
                     <a href="{% url 'editar-mascota' mascota.pk %}" class="btn boton"><i class="fa-solid fa-pen-to-square"></i>Editar</a>
                     <a href="{% url 'eliminar-mascota' mascota.pk %}" class="btn boton boton-rojo"><i class="fa-solid fa-trash"></i>Eliminar</a>

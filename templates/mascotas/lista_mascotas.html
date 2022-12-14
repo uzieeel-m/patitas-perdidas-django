@@ -8,19 +8,23 @@
 <!-- Seccion principal -->
 <div class="seccion seccion-principal texto-principal">
     <img src="{% static 'img/adopta1.jpg' %}" alt="Imagen Principal Adopta">
-    <div class="texto-principal texto-principal-absolute">
+    <div class="texto-principal-absolute">
         <h1><span>Adopta</span> una mascota</h1>
     </div>
 </div>
 <!-- fin Seccion principal -->
-<div class="container">
+<div class="container mt-3 mb-3">
         <h2>Mascotas en adopción</h2>
 
         <div class="contenedor-mascotas">
         {% for mascota in lista_mascotas %}
             <div class="mascota contenedor-imagen-texto">
                 <div class="imagen">
-                    <img src="{% static 'img/mascota-1.jpg' %}" alt="Imagen Mascota">
+                    {% if mascota.imagen %}
+                    <img class="img-fluid" src="{{mascota.imagen.url}}" alt="{{mascota.nombre}}">
+                    {% else %}
+                    <img class="img-fluid" src="{% static 'img/icono.png' %}" alt="Imagen Mascota">
+                    {% endif %}
                 </div>
                 <div class="texto">
                     <a class="nombre-mascota" href="{% url 'detalle-mascota' mascota.pk %}">{{mascota.nombre}}</a>
