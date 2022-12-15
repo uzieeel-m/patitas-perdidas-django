@@ -49,6 +49,9 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'allauth',
     'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
     #local apps
     "pages",
     "mascotas",
@@ -92,15 +95,15 @@ WSGI_APPLICATION = "config.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    # "default": env.dj_db_url('DATABASE_URL', default='postgres://postgres@db/postgres')
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'db',
-        'PORT': 5432,
-    }
+    "default": env.dj_db_url('DATABASE_URL', default='postgres://postgres@db/postgres')
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'postgres',
+    #     'USER': 'postgres',
+    #     'PASSWORD': 'postgres',
+    #     'HOST': 'db',
+    #     'PORT': 5432,
+    # }
 }
 
 
@@ -177,3 +180,19 @@ EMAIL_HOST_PASSWORD = ' '
 MEDIA_URL = '/media/'
 # MEDIA_ROOT = BASE_DIR / 'media/'
 MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
+
+# 514963193657-j61vdvfsgt1fgekmoio83igulicbbj8d.apps.googleusercontent.com
+# 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
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        },
+        'OAUTH_PKCE_ENABLED': True,
+    }
+}
