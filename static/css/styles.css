@@ -143,6 +143,7 @@ input:not([type="submit"]){
 }
 .boton-flotante{
   color: #f1faee;
+  content: ">";
   font-size: 2rem;
   left: 0;
   position: fixed;

@@ -9,7 +9,7 @@
     
     <!-- sidebar opciones (se muestra cuando se clickea el boton)-->
       <a class="boton-flotante" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-        <i class="fa-solid fa-chevron-right" style="color: #1d3557;"></i>
+        <i class="fa-solid fa-chevron-right" style="color: white;"></i>
       </a>
       <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
         Button with data-bs-target
@@ -21,6 +21,10 @@
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
+
+          <div class="opcion-barra-lateral">                
+            <a href="{% url 'perfil' user.pk %}"><i class="fa-solid fa-user"></i> Perfil</a>
+          </div>
 
           <div class="opcion-barra-lateral">
             <a href="{% url 'mis-mascotas' %}"><i class="fa-solid fa-paw mr-2"></i> Mis mascotas</a>
@@ -42,8 +46,8 @@
     <div class="info-usuario">
         <h1>Mi Perfil</h1>
         <p>Nombre de usuario: {{user.username}}</p>
-        <p>Nombre: {{user.nombre}}</p>
-        <p>Apellido/s: {{user.apellidos}}</p>
+        <!-- <p>Nombre: {{user.nombre}}</p>
+        <p>Apellido/s: {{user.apellidos}}</p> -->
         <p>Correo electrónico: {{user.email}}</p>
         <a class="btn boton" href="{% url 'editar-usuario' user.pk %}">Actualizar información</a>
         <a href="{% url 'eliminar-usuario' user.pk %}" class="btn boton boton-rojo">Eliminar cuenta</a>

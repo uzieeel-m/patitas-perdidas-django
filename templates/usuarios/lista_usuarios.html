@@ -9,7 +9,7 @@
     <div class="container mt-3 mb-3">
         <!-- sidebar opciones (se muestra cuando se clickea el boton)-->
         <a class="boton-flotante" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-        <i class="fa-solid fa-chevron-right" style="color: #1d3557;"></i>
+            <i class="fa-solid fa-chevron-right" style="color: white;"></i>
         </a>
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
             <div class="offcanvas-header">
@@ -17,6 +17,10 @@
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
+
+                <div class="opcion-barra-lateral">                
+                    <a href="{% url 'perfil' user.pk %}"><i class="fa-solid fa-user"></i> Perfil</a>
+                </div>
 
                 <div class="opcion-barra-lateral">
                 <a href="{% url 'mis-mascotas' %}"><i class="fa-solid fa-paw mr-2"></i> Mis mascotas</a>
